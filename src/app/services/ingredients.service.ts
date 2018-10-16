@@ -15,19 +15,11 @@ export class IngredientsService{
         this.ingredients.push(ingredient);
         this.ingredientsChanged.emit(this.ingredients.slice());
     }
-    addIngredients(auxIngredients: Ingredient[]){
-        for(const i of auxIngredients){
-            var NombreMA = this.ingredients.find(x=>x.name == i.name);
-            if(NombreMA != null){
-              let Nuevo = NombreMA.amount + i.amount;
-              NombreMA.getIngrediente(Nuevo);
-               // this.ingredients.push(new Ingredient[NombreMA.name,5]);   
-            }else{
-               this.ingredients.push(i);
-            }
-            this.ingredientsChanged.emit(this.ingredients.slice());
-            
-        }
-        
+    
+  addIngredients(auxIngredients: Ingredient[]){
+    for(const i of auxIngredients){
+        this.ingredients.push(i); 
     }
+    this.ingredientsChanged.emit(this.ingredients.slice());
+  }
 }
