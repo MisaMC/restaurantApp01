@@ -16,10 +16,18 @@ export class IngredientsService{
         this.ingredientsChanged.emit(this.ingredients.slice());
     }
     
-  addIngredients(auxIngredients: Ingredient[]){
-    for(const i of auxIngredients){
-        this.ingredients.push(i); 
-    }
-    this.ingredientsChanged.emit(this.ingredients.slice());
+    addIngredients(auxIngredients: Ingredient[]){
+        for(const i of auxIngredients){
+            var ingre = this.ingredients.find(x=>x.name == i.name);
+            if(ingre != null){
+              let newin = ingre.amount + i.amount;
+              ingre.getIngredient(newin);   
+            }else{
+               this.ingredients.push(i);
+            }
+            this.ingredientsChanged.emit(this.ingredients.slice());
+            
+        }
+        
   }
 }
