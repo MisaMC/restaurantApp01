@@ -17,6 +17,7 @@ export class IngredientsService{
         return this.ingredients[index];
     }
 
+    onDeleteItem(index: number){
         this.ingredients.splice(index,1);
         this.ingredientsChanged.next(this.ingredients.slice());
     }
