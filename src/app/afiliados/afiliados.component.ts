@@ -1,13 +1,14 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { Recipe } from '../Recipes.model';
-import { RecipeService } from '../../services/recipe.service';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Recipe } from '../recipes/recipes.model';
+import { RecipeService } from '../services/recipe.service';
 
 @Component({
-  selector: 'app-recipes-list',
-  templateUrl: './recipes-list.component.html',
-  styleUrls: ['./recipes-list.component.css']
+  selector: 'app-afiliados',
+  templateUrl: './afiliados.component.html',
+  styleUrls: ['./afiliados.component.css']
 })
-export class RecipesListComponent implements OnInit {
+export class AfiliadosComponent implements OnInit {
+
   @Output() recipeWasSelected = new EventEmitter<Recipe>();
   @Output() featureSelected = new EventEmitter<string>();
   recipes : Recipe[];

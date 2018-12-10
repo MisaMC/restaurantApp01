@@ -1,12 +1,10 @@
-<a style="cursor:pointer;" class="list-group-item list-group-item-action clearfix"
-[routerLink]="[index]" 
-routerLinkActive="active"
->
-  <div class="float-left">
+<a href="#" class="list-group-item list-group-item-action clearfix"
+            (click)="onSelected()">
+    <div class="float-left">
       <h4>{{recipe.name}}</h4>
       <p>{{recipe.description}}</p>
-  <span class="float-right">
-  <img [src]="recipe.imagePath" alt="" class="img-float">
-  </span>
-</div>
-</a>
+    </div>
+      <span class="float-right">
+        <img class="img-fluid" [src]="recipe.imagePath" alt=""  width="250" style="border-radius: 50%;">
+      </span>
+  </a> 
