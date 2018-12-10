@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -9,7 +10,13 @@ import { RecipesDetailComponent } from './recipes/recipes-detail/recipes-detail.
 import { RecipesListComponent } from './recipes/recipes-list/recipes-list.component';
 import { RecipesItemComponent } from './recipes/recipes-list/recipes-item/recipes-item.component';
 import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
-import { AfiliadosComponent } from './afiliados/afiliados.component';
+import { IngredientsService } from './services/ingredients.service';
+import { AppRoutingModule } from './app-routing-module';
+import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.component';
+import { RecipesStartComponent } from './recipes/recipes-start/recipes-start.component';
+import { RecipesEditComponent } from './recipes/recipes-edit/recipes-edit.component';
+import { RecipeService } from './services/recipe.service';
+
 
 @NgModule({
   declarations: [
@@ -21,12 +28,19 @@ import { AfiliadosComponent } from './afiliados/afiliados.component';
     RecipesListComponent,
     RecipesItemComponent,
     ShoppingEditComponent,
-    AfiliadosComponent
+    RecipeStartComponent,
+    RecipesStartComponent,
+    RecipesEditComponent
+    
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+
+  providers: [IngredientsService, RecipeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
